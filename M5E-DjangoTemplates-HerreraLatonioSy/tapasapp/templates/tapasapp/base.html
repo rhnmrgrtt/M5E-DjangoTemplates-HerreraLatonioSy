@@ -30,33 +30,28 @@ comments of my program.
     <body>
         <nav class="navbar navbar-dark bg-custom mb-3 sticky-top" style="background-color: #590404;">
             <div class="container-fluid">
-                <a class="navbar-brand mb-0" href="{% url 'view_menu' %}">My Tapas Menu</span> </a>
-                <a href="" style="color:white"><i class="material-icons">add</i></a>
+                <a class="navbar-brand mb-0" style="margin-left: 5px;" href="{% url 'view_menu' %}">My Tapas Menu</a>
+                <a href="" style="color: white; margin-right: 15px;"><i class="material-icons">add</i></a>
     
             </div>
 
         </nav>
 
-        <!-- Part 2 - no. 1 -->
-        <div class="col-2 justify-content-left">
-            <nav class="nav flex-column">
-                <a class="nav-link" aria-current="page" href="#">Active</a>
-                <a class="nav-link" href="#">Link</a>
-                <a class="nav-link" href="#">Link</a>
-                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </nav>
-        </div>
+        <!-- Part 2 - no. 1 --
         <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/ -->
-        <!-- /Part 2 - no. 1 -->
 
         <div class="container">
             <div class="row">
-
-                {% block content %}
-                {% endblock %}
-
+                <div class="col-md-2 pt-3">
+                    {% block side %}
+                    {% endblock %}
+                </div>
+                <div class="col-md-9 pt-3">
+                    {% block content %}
+                    {% endblock %}
+                </div>
             </div>
-        </div>  
+        </div>
         
         <footer class="footer bg-custom" style="background-color: #590404;">
 

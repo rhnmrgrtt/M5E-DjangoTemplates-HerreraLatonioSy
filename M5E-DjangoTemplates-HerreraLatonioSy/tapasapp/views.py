@@ -31,4 +31,4 @@ def view_menu(request):
 
 
 def add_menu(request): # part 1 - no. 2
-    return render(request, 'tapasapp/add_menu.html') 
+    return render(request, 'tapasapp/add_menu.html', {})

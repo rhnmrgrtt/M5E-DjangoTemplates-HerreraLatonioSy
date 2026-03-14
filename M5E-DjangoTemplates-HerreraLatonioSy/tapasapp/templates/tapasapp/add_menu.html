@@ -20,49 +20,34 @@ comments of my program.
 {% extends 'tapasapp/base.html' %}
 {% load static %}
 
+{% block side %}
+<ul class="mt-4">
+    <li><a href="{% url 'view_menu' %}">Back to main</a></li>
+</ul>
+{% endblock %}
+
 {% block content %}
+<div class="card mt-3 shadow-sm">
+    <div class="card-body p-4">
+        <h5 class="font-weight-bold border-bottom pb-2 mb-3"><strong>Type in Dish Details:</strong></h5>
 
-<div class="container mt-4">
-    <div class="col-md-8">
-
-        <div class="card">
-            <div class="card-header bg-light">
-                <h5>Type in Dish Details:</h5>
-            </div>
-
-            <div class="card-body">
-
-                <form method="POST">
-                    {% csrf_token %}
-
-                    <div class="form-group mb-3">
-                        <label>Name:</label>
-                        <input type="text" name="dish_name" class="form-control">
-                    </div>
-
-                    <div class="form-group row mb-3">
-                        <div class="col-md-3">
-                            <label>Cook Time:</label>
-                            <input type="text" name="cook_time" class="form-control">
-                        </div>
-
-                        <div class="col-md-3 offset-md-2">
-                            <label>Prep Time:</label>
-                            <input type="text" name="prep_time" class="form-control">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-secondary">
-                        Add to dishes
-                    </button>
-
-                </form>
-
-            </div>
-
+        <div class="form-group">
+            <label class="mb-1" for="dish-name">Name:</label>
+            <input type="text" id="dish-name" class="form-control">
         </div>
 
+        <div class="row mt-2">
+            <div class="col-md-4 mb-3">
+                <label class="mb-1" for="cook-time">Cook Time:</label>
+                <input type="text" id="cook-time" class="form-control">
+            </div>
+            <div class="col-md-4 offset-md-1 mb-3">
+                <label class="mb-1" for="prep-time">Prep Time:</label>
+                <input type="text" id="prep-time" class="form-control">
+            </div>
+        </div>
+
+        <button class="btn btn-secondary mt-2 mb-3">Add to dishes</button>
     </div>
 </div>
-
 {% endblock %}
