@@ -26,15 +26,26 @@ comments of my program.
 
         <script src="{% static '/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
         
+        <style>
+            .side-nav a {
+                color: black;
+                text-decoration: none;
+            }
+            .side-nav a:hover {
+                color: #590404;
+                text-decoration: underline;
+            }
+            td, th {
+                padding: 15px !important;
+            }
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-dark bg-custom mb-3 sticky-top" style="background-color: #590404;">
             <div class="container-fluid">
-                <a class="navbar-brand mb-0" style="margin-left: 5px;" href="{% url 'view_menu' %}">My Tapas Menu</a>
-                <a href="" style="color: white; margin-right: 15px;"><i class="material-icons">add</i></a>
-    
+                <a class="navbar-brand mb-0" style="margin-left: 20px;" href="{% url 'view_menu' %}">My Tapas Menu</a>
+                <a href="{% url 'add_menu' %}" style="color: white; margin-right: 15px;"><i class="material-icons">add</i></a>
             </div>
-
         </nav>
 
         <!-- Part 2 - no. 1 --
